@@ -25,7 +25,7 @@ class Hook_Generator {
 	 *
 	 * @var string
 	 */
-	public static $version = '0.0.2';
+	public static $version = '0.0.3';
 
 	/**
 	 * Generates the output file.
@@ -74,14 +74,10 @@ class Hook_Generator {
 
 		$c = new Color();
 
-    /*
-     * If debug is not enabled, suppress errors.
-     */
-		if (!$cmd['debug']) {
-
-			error_reporting(0);
-
-		} // end if;
+		/*
+		 * Disable notices outputs.
+		 */
+		error_reporting(0);
 
     /*
      * When the help flag is present, display it and bail.
@@ -134,6 +130,8 @@ class Hook_Generator {
 
 			fclose($f);
 
+			ob_start();
+
 			$hooks_parser = new \Bologer\HooksParser(array(
 				'scanDirectory'     => $cmd[0],
 				'ignoreDirectories' => $ignore_dirs,
@@ -147,7 +145,35 @@ class Hook_Generator {
 
 			$hooks_documentation->write();
 
-			echo $c('<italic><green>→ Document generated successfully!</green></italic>')->colorize() . PHP_EOL;
+			$errors = ob_get_contents();
+
+			ob_end_clean();
+
+			$errors = explode('Parse Error: ', $errors);
+
+			$errors = array_filter($errors);
+
+			if (empty($errors)) {
+
+				echo $c('<italic><green>→ Document generated successfully!</green></italic>')->colorize() . PHP_EOL;
+
+			} elseif (!empty($errors) && $cmd['debug']) {
+
+				echo PHP_EOL . $c('<italic>→ Warnings List:</italic>')->colorize() . PHP_EOL . PHP_EOL;
+
+				foreach ($errors as $error) {
+
+					echo $c('<yellow>|→ <italic>' . $error . '</italic></yellow>')->colorize() . PHP_EOL;
+
+				} // end foreach;
+
+				echo PHP_EOL . $c('<italic><green>→ Document generated successfully (with warnings)!</green></italic>')->colorize() . PHP_EOL;
+
+			} elseif (!empty($errors) && !$cmd['debug']) {
+
+				echo $c('<italic><green>→ Document generated successfully (with warnings)!</green></italic>')->colorize() . PHP_EOL;
+
+			} // end if;
 
 			echo PHP_EOL;
 

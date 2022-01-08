@@ -103,6 +103,11 @@ There is no need to manually update the @version tags on the code, as a `pre-com
 
 ## Changelog
 
+Version 0.0.3 - Released on 2021-01-08
+
+* Added: Link script - to be used while the package is not available on Packagist for composer v1;
+* Added: Better error and warning message handling when the --debug flag is present;
+
 Version 0.0.2 - Released on 2021-01-08
 
 * Improvement: Add composer.json to the sync-version-number file list;
