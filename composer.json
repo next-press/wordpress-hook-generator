@@ -3,11 +3,15 @@
     "description": "Parses the hooks and filters on our plugin and generate a markdown file with the contents.",
     "license": "GPL-2.0-only",
     "version": "0.0.1",
+    "homepage": "https://nextpress.co",
+    "readme": "README.md",
     "bin": [
         "bin/wordpress-hook-generator"
     ],
     "scripts": {
-        "generate-example": "bin/wordpress-hook-generator examples/source -o examples/actions.md" 
+        "generate-example": "bin/wordpress-hook-generator examples/source -o examples/actions.md",
+        "bump": "npm --no-git-tag-version version patch",
+        "sync-version-number": "\\NextPress\\Hook_Generator::_sync_version"
     },
     "authors": [
         {
@@ -15,10 +19,8 @@
             "email": "arindo@wpultimo.com"
         }
     ],
-    "require": {
-        "next-press/wordpress-hook-parser": "dev-master",
-        "next-press/phpdoc-parser": "dev-master",
-        "nategood/commando": "^0.4.0"
+    "support": {
+        "email": "arindo+open-source@nextpress.co"
     },
     "repositories": [
         {
@@ -38,6 +40,21 @@
             "url": "git@github.com:next-press/reflectiondocblock.git"
         }
     ],
+    "require": {
+        "php": ">=7.2",
+        "next-press/wordpress-hook-parser": "dev-master",
+        "next-press/phpdoc-parser": "dev-master",
+        "nategood/commando": "^0.4.0"
+    },
+    "require-dev": {
+        "phpcompatibility/phpcompatibility-wp": "^2.1",
+        "nextpress/nextpresscs": "dev-master"
+    },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
 }

@@ -53,3 +53,50 @@ wordpress-hook-generator path/to/folder -i dependencies,release
 #### Enable debugging `-d`
 
 By default, PHP warnings thrown while generating the documentation are suppressed and not shown on the terminal window. Adding the `-d` flag will display the warning messages.
+
+## Development
+
+To develop, test, or debug this tool, clone this repository and then be sure to first install both the PHP and node.js dependencies.
+
+Clone the repository:
+
+```
+git clone https://github.com/next-press/wordpress-hook-generator
+cd wordpress-hook-generator
+```
+
+Then for PHP, install the composer dependencies.
+
+```
+composer install
+```
+
+Do the same for node.js with npm.
+
+```
+npm install
+```
+
+### Important: Versioning
+
+To bump the version number, run the command bellow on the root directory. This command is a shorthand for the `npm version` command and by default it bumps the version patch number (from 0.0.1 to 0.0.2, for example).
+
+```
+composer bump
+```
+
+If you need to bump the major or minor version numbers, use the full command below:
+
+For a minor release:
+
+```
+npm --no-git-tag-version version minor
+```
+
+And for a major release:
+
+```
+npm --no-git-tag-version version major
+```
+
+There is no need to manually update the @version tags on the code, as a `pre-commit` is run by Husky to sync the version numbers, making sure they are always automatically up-to-date.

@@ -1,75 +1,62 @@
 #!/usr/bin/env php
 <?php
+/**
+ * WordPress Hook Generator
+ *
+ * WP Ultimo is distributed under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * any later version.
+ *
+ * WP Ultimo is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with WP Ultimo. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @author   Arindo Duque
+ * @category Core
+ * @version  0.0.1
+ */
 
-if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+/*
+ * Loads dependencies.
+ */
+bootstrap();
 
-    require __DIR__ . '/../vendor/autoload.php';
+/*
+ * Run the command.
+ */
+\NextPress\Hook_Generator::run();
 
-} elseif (file_exists(__DIR__ . '/../../../autoload.php')) {
+/**
+ * Loads the auto-loader, considering that this will probably be used as a tool.
+ *
+ * @return void
+ */
+function bootstrap() {
 
-    require __DIR__ . '/../../../autoload.php';
+	$autoload_paths = array(
+		'/../vendor/autoload.php',
+		'/../../../autoload.php',
+		'/../autoload.php',
+	);
 
-} elseif (file_exists(__DIR__ . '/../autoload.php')) {
+	foreach ($autoload_paths as $path) {
 
-    require __DIR__ . '/../autoload.php';
+    $full_path = __DIR__ . $path;
 
-} else {
+    if (file_exists($full_path)) {
 
-    throw new RuntimeException('Unable to locate autoload.php file.');
+      require $full_path;
 
-}
+      return;
 
-$generator_cmd = new Commando\Command();
+    } // end if;
 
-$generator_cmd->useDefaultHelp();
+	} // end foreach;
 
-// Define first option
-$generator_cmd->option()
-    ->require()
-    ->describedAs('Path to scan.');
+  throw new \RuntimeException('Unable to locate autoload.php file.');
 
-// Define a boolean flag "-c" aka "--capitalize"
-$generator_cmd->option('o')
-    ->aka('output')
-    ->aka('out')
-    ->default('actions.md')
-    ->describedAs('Output file.');
-
-// Define a boolean flag "-c" aka "--capitalize"
-$generator_cmd->option('i')
-    ->aka('ignore')
-    ->aka('cap')
-    ->default('')
-    ->describedAs('Folders to ignore');
-
-$generator_cmd->option('d')
-    ->aka('debug')
-    ->boolean()
-    ->describedAs('If we should display errors or not');
-
-echo sprintf('Generating docs for %s...', $generator_cmd[0]) . PHP_EOL;
-
-if (!$generator_cmd['debug']) {
-
-  error_reporting(0);
-
-}
-
-$f = fopen($generator_cmd['output'], 'wb');
-
-fclose($f);
-
-$hooksParser = new \Bologer\HooksParser([
-	'scanDirectory'     => $generator_cmd[0],
-	'ignoreDirectories' => [
-		'vendor',
-    'dependencies',
-    ...explode(',', $generator_cmd['ignore'])
-	]
-]);
-
-$parsedItems = $hooksParser->parse();
-
-$hooksDocumentation = new \Bologer\HookDocumentation($parsedItems);
-$hooksDocumentation->setSaveLocation($generator_cmd['output']);
-$hooksDocumentation->write();
+} // end bootstrap;

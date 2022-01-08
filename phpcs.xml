@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<ruleset name="WPUltimo">
+  <description>Rules for Coding Standards in WP Ultimo products</description>
+
+  <file>.</file>
+
+  <arg value="sp"/> <!-- Show sniff and progress -->
+  <arg name="colors"/>
+
+  <arg name="extensions" value="php" />
+
+	<exclude-pattern>node_modules/*</exclude-pattern>
+	<exclude-pattern>vendor/*</exclude-pattern>
+	<exclude-pattern>dependencies/*</exclude-pattern>
+	<exclude-pattern>views/*</exclude-pattern>
+	<exclude-pattern>inc/database/engine/*</exclude-pattern>
+	<exclude-pattern>inc/action-scheduler/*</exclude-pattern>
+	<exclude-pattern>inc/duplication/*</exclude-pattern>
+	<exclude-pattern>./sunrise.php</exclude-pattern>
+
+	<rule ref="NextPress">
+    <exclude name="Squiz.Commenting.FunctionCommentThrowTag" />
+  </rule>
+
+  <!-- Rules: Check PHP version compatibility -->
+  <rule ref="PHPCompatibilityWP"/>
+  <config name="minimum_supported_wp_version" value="4.6"/>
+  <config name="testVersion" value="5.6-"/>
+  <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<!-- Value: replace the function, class, and variable prefixes used. Separate multiple prefixes with a comma. -->
+			<property name="prefixes" type="array" value="WP_ULTIMO,wu_,WPULTIMO,NextPress"/>
+		</properties>
+    <exclude-pattern>tests/*</exclude-pattern>
+	</rule>
+
+  <rule ref="WordPress.WP.I18n">
+    <properties>
+      <property name="text_domain" value="wp-ultimo"/>
+    </properties>
+  </rule>
+
+  <rule ref="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound">
+      <exclude-pattern>views/*</exclude-pattern>
+  </rule>
+
+</ruleset>

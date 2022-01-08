@@ -1,0 +1,8 @@
+{
+  "phpcbf.enable": true,
+  "phpcbf.standard": "NextPress",
+  "phpcbf.onsave": false,
+  "editor.tabSize": 2,
+  "phpcbf.executablePath": "./vendor/bin/phpcbf",
+  "phpcs.executablePath": "./vendor/bin/phpcs"
+}
