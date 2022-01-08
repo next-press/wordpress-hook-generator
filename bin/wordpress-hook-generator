@@ -19,8 +19,6 @@ if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
 
 }
 
-error_reporting(0);
-
 $generator_cmd = new Commando\Command();
 
 $generator_cmd->useDefaultHelp();
@@ -44,7 +42,18 @@ $generator_cmd->option('i')
     ->default('')
     ->describedAs('Folders to ignore');
 
+$generator_cmd->option('d')
+    ->aka('debug')
+    ->boolean()
+    ->describedAs('If we should display errors or not');
+
 echo sprintf('Generating docs for %s...', $generator_cmd[0]) . PHP_EOL;
+
+if (!$generator_cmd['debug']) {
+
+  error_reporting(0);
+
+}
 
 $f = fopen($generator_cmd['output'], 'wb');
 

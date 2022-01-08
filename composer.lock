@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "feecfc469ee17ae638f0c8986542671d",
+    "content-hash": "7bfb8abc57e39137faa4f5943dee83f4",
     "packages": [
         {
             "name": "composer/installers",
@@ -302,12 +302,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/next-press/phpdoc-parser.git",
-                "reference": "91f82c375bd6b12a770f03f43857e2ec53dad219"
+                "reference": "1c848062789d47a6c1bb0405c5e3b4c0f718f539"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/next-press/phpdoc-parser/zipball/91f82c375bd6b12a770f03f43857e2ec53dad219",
-                "reference": "91f82c375bd6b12a770f03f43857e2ec53dad219",
+                "url": "https://api.github.com/repos/next-press/phpdoc-parser/zipball/1c848062789d47a6c1bb0405c5e3b4c0f718f539",
+                "reference": "1c848062789d47a6c1bb0405c5e3b4c0f718f539",
                 "shasum": ""
             },
             "require": {
@@ -319,7 +319,7 @@
                 "scribu/lib-posts-to-posts": "dev-master@dev",
                 "scribu/scb-framework": "dev-master@dev"
             },
-            "type": "wordpress-plugin",
+            "type": "library",
             "autoload": {
                 "classmap": [
                     "lib"
@@ -352,7 +352,7 @@
                 "issues": "https://github.com/WordPress/phpdoc-parser/issues",
                 "source": "https://github.com/next-press/phpdoc-parser/tree/master"
             },
-            "time": "2022-01-08T03:44:20+00:00"
+            "time": "2022-01-08T04:06:27+00:00"
         },
         {
             "name": "next-press/wordpress-hook-parser",
@@ -657,7 +657,10 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "next-press/wordpress-hook-parser": 20,
+        "next-press/phpdoc-parser": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
