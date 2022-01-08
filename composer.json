@@ -12,8 +12,8 @@
         }
     ],
     "require": {
-        "next-press/wordpress-hook-parser": "*",
-        "next-press/phpdoc-parser": "*",
+        "next-press/wordpress-hook-parser": "dev-master",
+        "next-press/phpdoc-parser": "dev-master",
         "nategood/commando": "^0.4.0"
     },
     "repositories": [
