@@ -2,14 +2,22 @@
 <?php
 
 if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
-
-  $loader = require __DIR__ . '/../vendor/autoload.php';
-
+  
+    require __DIR__ . '/../vendor/autoload.php';
+    
+} elseif (file_exists(__DIR__ . '/../../../autoload.php')) {
+  
+    require __DIR__ . '/../../../autoload.php';
+    
+} elseif (file_exists(__DIR__ . '/../autoload.php')) {
+  
+    require __DIR__ . '/../autoload.php';
+    
 } else {
-
-  $loader = require __DIR__ . '/../../autoload.php';
-
-} // end if;
+  
+    throw new RuntimeException('Unable to locate autoload.php file.');
+    
+}
 
 $generator_cmd = new Commando\Command();
 
