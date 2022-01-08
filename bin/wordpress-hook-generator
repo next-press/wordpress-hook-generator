@@ -2,22 +2,24 @@
 <?php
 
 if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
-  
+
     require __DIR__ . '/../vendor/autoload.php';
-    
+
 } elseif (file_exists(__DIR__ . '/../../../autoload.php')) {
-  
+
     require __DIR__ . '/../../../autoload.php';
-    
+
 } elseif (file_exists(__DIR__ . '/../autoload.php')) {
-  
+
     require __DIR__ . '/../autoload.php';
-    
+
 } else {
-  
+
     throw new RuntimeException('Unable to locate autoload.php file.');
-    
+
 }
+
+error_reporting(0);
 
 $generator_cmd = new Commando\Command();
 
@@ -39,17 +41,21 @@ $generator_cmd->option('o')
 $generator_cmd->option('i')
     ->aka('ignore')
     ->aka('cap')
+    ->default('')
     ->describedAs('Folders to ignore');
 
-echo 'Generating docs...' . PHP_EOL;
+echo sprintf('Generating docs for %s...', $generator_cmd[0]) . PHP_EOL;
 
 $f = fopen($generator_cmd['output'], 'wb');
+
 fclose($f);
 
 $hooksParser = new \Bologer\HooksParser([
 	'scanDirectory'     => $generator_cmd[0],
 	'ignoreDirectories' => [
 		'vendor',
+    'dependencies',
+    ...explode(',', $generator_cmd['ignore'])
 	]
 ]);
 

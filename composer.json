@@ -12,51 +12,19 @@
         }
     ],
     "require": {
-        "next-press/wordpress-hook-parser": "dev-master",
-        "nategood/commando": "^0.4.0",
-        "next-press/phpdoc-parser": "dev-master",
-        "composer/installers": "~1.0",
-        "phpdocumentor/reflection": "~3.0",
-        "erusev/parsedown": "~1.7",
-        "scribu/lib-posts-to-posts": "dev-master@dev",
-        "scribu/scb-framework": "dev-master@dev",
-        "psr/log": "~1.0"
+        "next-press/wordpress-hook-parser": "*",
+        "next-press/phpdoc-parser": "*",
+        "nategood/commando": "^0.4.0"
     },
     "repositories": [
         {
-            "type": "package",
-            "package": {
-                "name": "next-press/wordpress-hook-parser",
-                "version": "dev-master",
-                "source": {
-                    "url": "https://github.com/next-press/wordpress-hook-parser.git",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
+            "type": "vcs",
+            "url": "git@github.com:next-press/wordpress-hook-parser.git"
         },
         {
-            "type": "package",
-            "package": {
-                "name": "next-press/phpdoc-parser",
-                "version": "dev-master",
-                "source": {
-                    "url": "https://github.com/next-press/phpdoc-parser.git",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
+            "type": "vcs",
+            "url": "git@github.com:next-press/phpdoc-parser.git"
         }
     ],
-    "minimum-stability": "dev",
-    "autoload": {
-        "files": [
-            "vendor/next-press/phpdoc-parser/lib/runner.php",
-            "vendor/next-press/phpdoc-parser/lib/template.php"
-        ],
-        "classmap": [
-            "vendor/next-press/wordpress-hook-parser/src",
-            "vendor/next-press/phpdoc-parser"
-        ]
-    }
+    "minimum-stability": "dev"
 }
