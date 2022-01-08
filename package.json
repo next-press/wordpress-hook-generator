@@ -1,0 +1,36 @@
+{
+  "name": "wordpress-hook-parser",
+  "version": "0.0.1",
+  "description": "Parses the hooks and filters on our plugin and generate a markdown file with the contents.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/next-press/wordpress-hook-generator.git"
+  },
+  "keywords": [
+    "wordpress",
+    "next-press",
+    "hooks",
+    "filters"
+  ],
+  "author": "Arindo Duque <arindo@wpultimo.com>",
+  "license": "GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/next-press/wordpress-hook-generator/issues"
+  },
+  "homepage": "https://github.com/next-press/wordpress-hook-generator#readme",
+  "dependencies": {
+    "husky": "^3.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "composer generate-example"
+    }
+  }
+}

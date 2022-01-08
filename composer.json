@@ -1,10 +1,14 @@
 {
     "name": "next-press/wordpress-hook-generator",
-    "description": "Parses the hooks and filters on our plugin and generate a markdown file with the contents",
+    "description": "Parses the hooks and filters on our plugin and generate a markdown file with the contents.",
     "license": "GPL-2.0-only",
+    "version": "0.0.1",
     "bin": [
         "bin/wordpress-hook-generator"
     ],
+    "scripts": {
+        "generate-example": "bin/wordpress-hook-generator examples/source -o examples/actions.md" 
+    },
     "authors": [
         {
             "name": "Arindo Duque",
@@ -28,6 +32,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:next-press/reflection.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:next-press/reflectiondocblock.git"
         }
     ],
     "minimum-stability": "dev",
