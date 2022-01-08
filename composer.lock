@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7bfb8abc57e39137faa4f5943dee83f4",
+    "content-hash": "933059d697645b9db10ca51780f3d502",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "1.x-dev",
+            "version": "v1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
@@ -155,16 +155,16 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "1.8.0-beta-7",
+            "version": "1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "fe7a50eceb4a3c867cc9fa9c0aa906b1067d1955"
+                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/fe7a50eceb4a3c867cc9fa9c0aa906b1067d1955",
-                "reference": "fe7a50eceb4a3c867cc9fa9c0aa906b1067d1955",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
+                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
                 "shasum": ""
             },
             "require": {
@@ -197,7 +197,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2019-03-17T18:47:21+00:00"
+            "time": "2019-12-30T22:54:17+00:00"
         },
         {
             "name": "kevinlebrun/colors.php",
@@ -302,12 +302,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/next-press/phpdoc-parser.git",
-                "reference": "1c848062789d47a6c1bb0405c5e3b4c0f718f539"
+                "reference": "8433cbda9b7655360db332706744c2020721c4fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/next-press/phpdoc-parser/zipball/1c848062789d47a6c1bb0405c5e3b4c0f718f539",
-                "reference": "1c848062789d47a6c1bb0405c5e3b4c0f718f539",
+                "url": "https://api.github.com/repos/next-press/phpdoc-parser/zipball/8433cbda9b7655360db332706744c2020721c4fe",
+                "reference": "8433cbda9b7655360db332706744c2020721c4fe",
                 "shasum": ""
             },
             "require": {
@@ -352,7 +352,7 @@
                 "issues": "https://github.com/WordPress/phpdoc-parser/issues",
                 "source": "https://github.com/next-press/phpdoc-parser/tree/master"
             },
-            "time": "2022-01-08T04:06:27+00:00"
+            "time": "2022-01-08T04:23:35+00:00"
         },
         {
             "name": "next-press/wordpress-hook-parser",
@@ -388,16 +388,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "1.x-dev",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "c4bbc8e236a1f21b2b17cfbf3d46aa6ece69b9f7"
+                "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/c4bbc8e236a1f21b2b17cfbf3d46aa6ece69b9f7",
-                "reference": "c4bbc8e236a1f21b2b17cfbf3d46aa6ece69b9f7",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51",
+                "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51",
                 "shasum": ""
             },
             "require": {
@@ -429,20 +429,20 @@
                 "parser",
                 "php"
             ],
-            "time": "2016-01-15T21:03:42+00:00"
+            "time": "2015-09-19T14:15:08+00:00"
         },
         {
             "name": "phpdocumentor/reflection",
-            "version": "3.0.x-dev",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/Reflection.git",
-                "reference": "59e61accdecf9ea69db71763a0f6f774094f656e"
+                "reference": "793bfd92d9a0fc96ae9608fb3e947c3f59fb3a0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/Reflection/zipball/59e61accdecf9ea69db71763a0f6f774094f656e",
-                "reference": "59e61accdecf9ea69db71763a0f6f774094f656e",
+                "url": "https://api.github.com/repos/phpDocumentor/Reflection/zipball/793bfd92d9a0fc96ae9608fb3e947c3f59fb3a0d",
+                "reference": "793bfd92d9a0fc96ae9608fb3e947c3f59fb3a0d",
                 "shasum": ""
             },
             "require": {
@@ -459,7 +459,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
@@ -483,7 +483,7 @@
                 "reflection",
                 "static analysis"
             ],
-            "time": "2017-12-20T21:17:50+00:00"
+            "time": "2016-05-21T08:42:32+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -661,7 +661,7 @@
         "next-press/wordpress-hook-parser": 20,
         "next-press/phpdoc-parser": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],

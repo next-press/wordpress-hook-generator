@@ -26,5 +26,6 @@
             "url": "git@github.com:next-press/phpdoc-parser.git"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
