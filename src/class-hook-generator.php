@@ -25,7 +25,7 @@ class Hook_Generator {
 	 *
 	 * @var string
 	 */
-	public static $version = '0.0.1';
+	public static $version = '0.0.2';
 
 	/**
 	 * Generates the output file.
@@ -183,6 +183,7 @@ class Hook_Generator {
 
 		$files = array(
 			__FILE__,
+			$pwd . '/composer.json',
 			$pwd . '/bin/wordpress-hook-generator',
 		);
 
@@ -192,7 +193,7 @@ class Hook_Generator {
 
 			$content = file_get_contents($file);
 
-			$content = preg_replace_callback('/(?:@version|\$version)(?:[\s\'"=]+)((?:\d+\.)?(?:\d+\.)?(?:\*|\d+))(?:[\s\'";]+)/', function($matches) use ($json) {
+			$content = preg_replace_callback('/(?:"version|@version|\$version)(?:[\s\'"=:]+)((?:\d+\.)?(?:\d+\.)?(?:\*|\d+))(?:[\s\'";]+)/', function($matches) use ($json) {
 
 				$new_content = str_replace($matches[1], $json['version'], $matches[0]);
 

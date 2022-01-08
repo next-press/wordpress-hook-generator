@@ -2,7 +2,8 @@
     "name": "next-press/wordpress-hook-generator",
     "description": "Parses the hooks and filters on our plugin and generate a markdown file with the contents.",
     "license": "GPL-2.0-only",
-    "version": "0.0.1",
+    "version": "0.0.2",
+    "type": "library",
     "homepage": "https://nextpress.co",
     "readme": "README.md",
     "bin": [

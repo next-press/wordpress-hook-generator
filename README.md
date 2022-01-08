@@ -4,7 +4,7 @@ This is a handy wrapper around [wordpress-hook-parser](https://github.com/bologe
 
 It parses the folders passed to it and generates a markdown file containing all the hooks, filters, with the corresponding documentation.
 
-To see an example of the generated markdown file, [click here](https://github.com/next-press/wordpress-hook-generator/blob/main/actions.md).
+To see an example of the generated markdown file, [click here](https://github.com/next-press/wordpress-hook-generator/blob/main/examples/actions.md).
 
 ## Installation
 
@@ -100,3 +100,13 @@ npm --no-git-tag-version version major
 ```
 
 There is no need to manually update the @version tags on the code, as a `pre-commit` is run by Husky to sync the version numbers, making sure they are always automatically up-to-date.
+
+## Changelog
+
+Version 0.0.2 - Released on 2021-01-08
+
+* Improvement: Add composer.json to the sync-version-number file list;
+
+Version 0.0.1 - Initial Release - Released on 2021-01-08
+
+* Initial Release;
