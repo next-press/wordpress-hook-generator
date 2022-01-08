@@ -8,12 +8,30 @@ To see an example of the generated markdown file, [click here](https://github.co
 
 ## Installation
 
+Unfortunately, since Composer 2, the caching schedule for Composer 1 packages is not being updated as frequently. So if you are not able to install it via `composer global require next-press/wordpress-hook-generator`, try this first installation method instead.
+
+```bash
+# Clone the repo onto your home directory
+cd && git clone https://github.com/next-press/wordpress-hook-generator
+cd wordpress-hook-generator
+
+# Install dependencies
+composer install
+npm install
+
+# Link the binary to /usr/local/bin, so it becomes available
+# system-wise via the command `wordpress-hook-generator`.
+composer link
+```
+
+### How it should be
+
 As a CLI tool, this should be installed globally using composer.
 
 To install it, simply run:
 
 ```
-composer require next-press/wordpress-hook-generator
+composer global require next-press/wordpress-hook-generator
 ```
 
 ## Usage
@@ -26,11 +44,11 @@ Then you simply run it passing the target folder as the first argument.
 wordpress-hook-generator path/to/folder
 ```
 
-### Options
+## Options
 
 In addition to the path to be scanned, there are additional options that can be passed to the command.
 
-#### Output file `-o`
+### Output file `-o`
 
 By default, the output is written to a file called `actions.md` inside the directory where the command was ran.
 
@@ -40,7 +58,7 @@ You can override the output file name by passing a file path with the option `-o
 wordpress-hook-generator path/to/folder -o custom-output-file-name.md
 ```
 
-#### Ignore folders `-i`
+### Ignore folders `-i`
 
 By default, the vendor folder is ignored when scanning the target directory. If you wish to pass additional folder names to ignore, you can do so by using the `-i` option.
 
@@ -50,7 +68,7 @@ The `-i` option takes a comma-separated list of directory names.
 wordpress-hook-generator path/to/folder -i dependencies,release
 ```
 
-#### Enable debugging `-d`
+### Enable debugging `-d`
 
 By default, PHP warnings thrown while generating the documentation are suppressed and not shown on the terminal window. Adding the `-d` flag will display the warning messages.
 
@@ -102,6 +120,10 @@ npm --no-git-tag-version version major
 There is no need to manually update the @version tags on the code, as a `pre-commit` is run by Husky to sync the version numbers, making sure they are always automatically up-to-date.
 
 ## Changelog
+
+Version 0.0.4 - Released on 2021-01-08
+
+* Docs: Add an installation method that works as a fallback to composer global require;
 
 Version 0.0.3 - Released on 2021-01-08
 
