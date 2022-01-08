@@ -3,6 +3,12 @@
     "description": "Parses the hooks and filters on our plugin and generate a markdown file with the contents.",
     "license": "GPL-2.0-only",
     "version": "0.0.2",
+    "keywords": [
+        "wordpress",
+        "nextpress",
+        "apply_filters",
+        "do_action"
+    ],
     "type": "library",
     "homepage": "https://nextpress.co",
     "readme": "README.md",
@@ -12,7 +18,8 @@
     "scripts": {
         "generate-example": "bin/wordpress-hook-generator examples/source -o examples/actions.md",
         "bump": "npm --no-git-tag-version version patch",
-        "sync-version-number": "\\NextPress\\Hook_Generator::_sync_version"
+        "sync-version-number": "\\NextPress\\Hook_Generator::_sync_version",
+        "link": "ln -sf \"$PWD/bin/wordpress-hook-generator\" /usr/local/bin/wordpress-hook-generator"
     },
     "authors": [
         {
@@ -31,14 +38,6 @@
         {
             "type": "vcs",
             "url": "git@github.com:next-press/phpdoc-parser.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:next-press/reflection.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:next-press/reflectiondocblock.git"
         }
     ],
     "require": {
