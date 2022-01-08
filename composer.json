@@ -24,6 +24,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:next-press/phpdoc-parser.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:next-press/reflection.git"
         }
     ],
     "minimum-stability": "dev",
