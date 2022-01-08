@@ -1,0 +1,52 @@
+#!/usr/bin/env php
+<?php
+
+if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+
+  $loader = require __DIR__ . '/../vendor/autoload.php';
+
+} else {
+
+  $loader = require __DIR__ . '/../../autoload.php';
+
+} // end if;
+
+$generator_cmd = new Commando\Command();
+
+$generator_cmd->useDefaultHelp();
+
+// Define first option
+$generator_cmd->option()
+    ->require()
+    ->describedAs('Path to scan.');
+
+// Define a boolean flag "-c" aka "--capitalize"
+$generator_cmd->option('o')
+    ->aka('output')
+    ->aka('out')
+    ->default('actions.md')
+    ->describedAs('Output file.');
+
+// Define a boolean flag "-c" aka "--capitalize"
+$generator_cmd->option('i')
+    ->aka('ignore')
+    ->aka('cap')
+    ->describedAs('Folders to ignore');
+
+echo 'Generating docs...' . PHP_EOL;
+
+$f = fopen($generator_cmd['output'], 'wb');
+fclose($f);
+
+$hooksParser = new \Bologer\HooksParser([
+	'scanDirectory'     => $generator_cmd[0],
+	'ignoreDirectories' => [
+		'vendor',
+	]
+]);
+
+$parsedItems = $hooksParser->parse();
+
+$hooksDocumentation = new \Bologer\HookDocumentation($parsedItems);
+$hooksDocumentation->setSaveLocation($generator_cmd['output']);
+$hooksDocumentation->write();
