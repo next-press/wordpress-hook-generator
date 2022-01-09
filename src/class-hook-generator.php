@@ -139,11 +139,17 @@ class Hook_Generator {
 
 			$parsed_items = $hooks_parser->parse();
 
-			$hooks_documentation = new \Bologer\HookDocumentation($parsed_items);
+			$hooks_documentation = new Hook_Documentation($parsed_items);
 
 			$hooks_documentation->setSaveLocation($cmd['output']);
 
-			$hooks_documentation->write();
+			$status = $hooks_documentation->write();
+
+			if ($status === false) {
+
+				throw new \Exception('A fatal error was found.');
+
+			} // end if;
 
 			$errors = ob_get_contents();
 
