@@ -25,7 +25,7 @@ class Hook_Generator {
 	 *
 	 * @var string
 	 */
-	public static $version = '0.0.4';
+	public static $version = '0.0.5';
 
 	/**
 	 * Generates the output file.
