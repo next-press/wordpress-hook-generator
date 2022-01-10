@@ -119,6 +119,38 @@ class Hook_Documentation extends \Bologer\HookDocumentation {
 
 	} // end get_tag;
 
+	/**
+	 * Get the deprecated values.
+	 *
+	 * @param object $hook The hook.
+	 * @return string
+	 */
+	protected function get_deprecation($hook) {
+
+		$message = '';
+
+		if ($hook->type === 'filter_deprecated' || $hook->type === 'action_deprecated') {
+
+			$version     = $hook->arguments[1] ?? ''; // phpcs:ignore
+			$replacement = $hook->arguments[2] ?? ''; // phpcs:ignore
+			$message     = $hook->arguments[3] ?? ''; // phpcs:ignore
+
+			$version = trim($version, '"\'');
+			$message = ' - ' . trim($message, '"\'');
+
+			$desc = $replacement ? "Use $replacement instead." : '';
+
+		} else {
+
+			$version = $this->get_tag($hook, 'deprecated');
+			$desc    = $this->get_tag($hook, 'deprecated', 'description', 'No description provided.');
+
+		} // end if;
+
+		return sprintf('Deprecated in %s *%s*%s', $version, $desc, $message);
+
+	} // end get_deprecation;
+
 	// phpcs:disable
 
 	/**
@@ -144,10 +176,8 @@ class Hook_Documentation extends \Bologer\HookDocumentation {
 		$title            = $hook->name;
 		$description      = $hook->docBlock->description ?: '*No description provided.*';
 		$long_description = $hook->docBlock->longDescription;
-
 		$since            = $this->get_tag($hook, 'since');
 		$see              = $this->get_tag($hook, 'see');
-		$deprecated       = $this->get_tag($hook, 'deprecated');
 
 		$content .= $header;
 		$content .= '### ' . $title . PHP_EOL;
@@ -175,11 +205,11 @@ class Hook_Documentation extends \Bologer\HookDocumentation {
 
 		} // end if;
 
+		$deprecated = $this->get_deprecation($hook);
+
 		if ($deprecated) {
 
-			$desc = $this->get_tag($hook, 'deprecated', 'description');
-
-			$additional_items[] = sprintf('Deprecated in %s *%s*', $deprecated, $desc);
+			$additional_items[] = $deprecated;
 
 		} // end if;
 

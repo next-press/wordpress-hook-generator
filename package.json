@@ -30,7 +30,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "composer generate-example ; composer sync-version-number ; echo '→ Example file regenerated 😀'"
+      "pre-commit": "composer generate-example ; composer sync-version-number ; echo '→ Example file regenerated 😀' ; git add -A"
     }
   }
 }

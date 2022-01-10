@@ -5,6 +5,7 @@ This is a well documented filter.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Added in 3.9.0
+Deprecated in  *No description provided.*
 
 ```php
 apply_filters("good_static_filter", array $mce_translation, string $mce_locale)
@@ -24,6 +25,7 @@ This is a well documented dynamic filter.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Added in 2.6.0
+Deprecated in  *No description provided.*
 
 ```php
 apply_filters("good_dynamic_filter_{$option}", mixed $value, mixed $old_value)
@@ -43,6 +45,7 @@ This is a well documented dynamic filter.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Added in 2.6.0
+Deprecated in  *No description provided.*
 
 ```php
 apply_filters("good_double_quotes_dynamic_filter_{$option}", mixed $value, mixed $old_value)
@@ -61,6 +64,8 @@ This is a filter missing the "since" line.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
+Deprecated in  *No description provided.*
+
 ```php
 apply_filters("missing_since_static_filter", mixed $value, string $mce_locale)
 ```
@@ -78,6 +83,8 @@ This is a dynamic filter missing the "since" line.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
+Deprecated in  *No description provided.*
+
 ```php
 apply_filters("missing_since_dynamic_filter_{$option}", mixed $value, mixed $old_value)
 ```
@@ -94,6 +101,8 @@ Location: filters.php:61
 This is a dynamic filter missing the "since" line.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Deprecated in  *No description provided.*
 
 ```php
 apply_filters("missing_since_double_quotes_dynamic_filter_{$option}", mixed $value, mixed $old_value)
@@ -113,6 +122,7 @@ This is a filter missing one "param" line.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Added in 2.6.0
+Deprecated in  *No description provided.*
 
 ```php
 apply_filters("missing_param_static_filter", string $mce_locale)
@@ -131,6 +141,7 @@ This is a dynamic filter missing one "param" line.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Added in 2.6.0
+Deprecated in  *No description provided.*
 
 ```php
 apply_filters("missing_param_dynamic_filter_{$option}", string $mce_locale)
@@ -149,6 +160,7 @@ This is a dynamic filter missing one "param" line.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Added in 2.6.0
+Deprecated in  *No description provided.*
 
 ```php
 apply_filters("missing_param_double_quotes_dynamic_filter_{$option}", string $mce_locale)
@@ -167,6 +179,7 @@ This is a filter with multiple since tags
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Added in 1.0
+Deprecated in  *No description provided.*
 
 ```php
 apply_filters("multiple_since_tags", string $first_parameter, string $second_parameter)
@@ -183,6 +196,8 @@ Location: filters.php:122
 
 *No description provided.*
 
+Deprecated in  *No description provided.*
+
 ```php
 apply_filters("no_doc_static_filter")
 ```
@@ -194,6 +209,8 @@ Location: filters.php:124
 
 *No description provided.*
 
+Deprecated in  *No description provided.*
+
 ```php
 apply_filters("no_doc_dynamic_filter_{$option}")
 ```
@@ -204,6 +221,8 @@ Location: filters.php:126
 ### no_doc_double_quotes_dynamic_filter_{$option}
 
 *No description provided.*
+
+Deprecated in  *No description provided.*
 
 ```php
 apply_filters("no_doc_double_quotes_dynamic_filter_{$option}")
@@ -219,6 +238,7 @@ This is a well documented action.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Added in 2.9.0
+Deprecated in  *No description provided.*
 
 ```php
 do_action("good_doc_static_action", string $option, mixed $old_value, mixed $value)
@@ -239,6 +259,7 @@ This is a well documented dynamic action.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Added in 2.9.0
+Deprecated in  *No description provided.*
 
 ```php
 do_action("good_doc_dynamic_action_{$option}", string $option, mixed $old_value, mixed $value)
@@ -259,6 +280,7 @@ This is a well documented dynamic action.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Added in 2.9.0
+Deprecated in  *No description provided.*
 
 ```php
 do_action("good_doc_double_quotes_dynamic_action_{$option}", string $option, mixed $old_value, mixed $value)
@@ -278,6 +300,8 @@ This is an action missing the "since" line.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
+Deprecated in  *No description provided.*
+
 ```php
 do_action("missing_since_static_action", string $option, mixed $old_value, mixed $value)
 ```
@@ -296,6 +320,8 @@ This is a dynamic action missing the "since" line.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
+Deprecated in  *No description provided.*
+
 ```php
 do_action("missing_since_dynamic_action_{$option}", string $option, mixed $old_value, mixed $value)
 ```
@@ -313,6 +339,8 @@ Location: actions.php:67
 This is a dynamic action missing the "since" line.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Deprecated in  *No description provided.*
 
 ```php
 do_action("missing_since_double_quotes_dynamic_action_{$option}", string $option, mixed $old_value, mixed $value)
@@ -333,6 +361,7 @@ This is an action missing a "param" line.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Added in 2.9.0
+Deprecated in  *No description provided.*
 
 ```php
 do_action("missing_param_static_action", string $option, mixed $value)
@@ -352,6 +381,7 @@ This is a well documented dynamic action.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Added in 2.9.0
+Deprecated in  *No description provided.*
 
 ```php
 do_action("missing_param_dynamic_action_{$option}", string $option, mixed $value)
@@ -371,6 +401,7 @@ This is a well documented dynamic action.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Added in 2.9.0
+Deprecated in  *No description provided.*
 
 ```php
 do_action("missing_param_double_quotes_dynamic_action_{$option}", string $option, mixed $value)
@@ -387,6 +418,8 @@ Location: actions.php:118
 
 *No description provided.*
 
+Deprecated in  *No description provided.*
+
 ```php
 do_action("no_doc_static_action")
 ```
@@ -397,6 +430,8 @@ Location: actions.php:120
 ### no_doc_dynamic_action_{$option}
 
 *No description provided.*
+
+Deprecated in  *No description provided.*
 
 ```php
 do_action("no_doc_dynamic_action_{$option}")
@@ -409,6 +444,8 @@ Location: actions.php:121
 
 *No description provided.*
 
+Deprecated in  *No description provided.*
+
 ```php
 do_action("no_doc_double_quotes_dymanic_action_{$option}")
 ```
@@ -420,6 +457,8 @@ Location: actions.php:122
 
 This filter should be marked as deprecated since 1.0
 
+Deprecated in  *No description provided.*
+
 ```php
 apply_filters("deprecated_filter")
 ```
@@ -430,6 +469,8 @@ Location: deprecated-file.php:23
 ### deprecated_action
 
 This action should be marked as deprecated since 1.0
+
+Deprecated in  *No description provided.*
 
 ```php
 do_action("deprecated_action")
