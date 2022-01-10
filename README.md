@@ -121,6 +121,11 @@ There is no need to manually update the @version tags on the code, as a `pre-com
 
 ## Changelog
 
+Version 0.0.6 - Released on 2021-01-10
+
+* Fix: Works for filters and actions inside class methods;
+* Fix: Final adjustments to the template;
+
 Version 0.0.5 - Released on 2021-01-09
 
 * Added: New template with the additional data;

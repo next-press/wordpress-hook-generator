@@ -25,7 +25,7 @@ class Hook_Generator {
 	 *
 	 * @var string
 	 */
-	public static $version = '0.0.5';
+	public static $version = '0.0.6';
 
 	/**
 	 * Generates the output file.
@@ -130,7 +130,7 @@ class Hook_Generator {
 
 			fclose($f);
 
-			ob_start();
+			// ob_start(); // Removed for now.
 
 			$hooks_parser = new \Bologer\HooksParser(array(
 				'scanDirectory'     => $cmd[0],
@@ -161,7 +161,7 @@ class Hook_Generator {
 
 			if (empty($errors)) {
 
-				echo $c('<italic><green>→ Document generated successfully!</green></italic>')->colorize() . PHP_EOL;
+				echo PHP_EOL . $c('<italic><green>→ Document generated successfully!</green></italic>')->colorize() . PHP_EOL;
 
 			} elseif (!empty($errors) && $cmd['debug']) {
 

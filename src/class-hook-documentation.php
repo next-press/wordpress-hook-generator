@@ -129,6 +129,8 @@ class Hook_Documentation extends \Bologer\HookDocumentation {
 
 		$message = '';
 
+		$version = false;
+
 		if ($hook->type === 'filter_deprecated' || $hook->type === 'action_deprecated') {
 
 			$version     = $hook->arguments[1] ?? ''; // phpcs:ignore
@@ -136,7 +138,12 @@ class Hook_Documentation extends \Bologer\HookDocumentation {
 			$message     = $hook->arguments[3] ?? ''; // phpcs:ignore
 
 			$version = trim($version, '"\'');
-			$message = ' - ' . trim($message, '"\'');
+
+			if ($message) {
+
+				$message = ' - ' . trim($message, '"\'');
+
+			} // end if;
 
 			$desc = $replacement ? "Use $replacement instead." : '';
 
@@ -147,7 +154,13 @@ class Hook_Documentation extends \Bologer\HookDocumentation {
 
 		} // end if;
 
-		return sprintf('Deprecated in %s *%s*%s', $version, $desc, $message);
+		if ($version) {
+
+			return sprintf('Deprecated in %s *%s*%s', $version, $desc, $message);
+
+		} // end if;
+
+		return false;
 
 	} // end get_deprecation;
 
