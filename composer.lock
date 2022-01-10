@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ad8e679959cc13cb0c491628998abc9",
+    "content-hash": "3e8ab893371740dc46d75db0beb0b21f",
     "packages": [
         {
             "name": "composer/installers",
@@ -302,19 +302,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/next-press/phpdoc-parser.git",
-                "reference": "b5555d887364b99a6d2675902a626c34d0514cd3"
+                "reference": "3a0db88176491d7915bcb15e9e4492662661f897"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/next-press/phpdoc-parser/zipball/b5555d887364b99a6d2675902a626c34d0514cd3",
-                "reference": "b5555d887364b99a6d2675902a626c34d0514cd3",
+                "url": "https://api.github.com/repos/next-press/phpdoc-parser/zipball/3a0db88176491d7915bcb15e9e4492662661f897",
+                "reference": "3a0db88176491d7915bcb15e9e4492662661f897",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "~1.0",
                 "erusev/parsedown": "~1.7",
-                "next-press/reflection": "~3.0",
                 "php": ">=5.4",
+                "phpdocumentor/reflection": "~3.0",
                 "psr/log": "~1.0",
                 "scribu/lib-posts-to-posts": "dev-master@dev",
                 "scribu/scb-framework": "dev-master@dev"
@@ -352,63 +352,7 @@
                 "issues": "https://github.com/WordPress/phpdoc-parser/issues",
                 "source": "https://github.com/next-press/phpdoc-parser/tree/master"
             },
-            "time": "2022-01-08T05:52:20+00:00"
-        },
-        {
-            "name": "next-press/reflection",
-            "version": "3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/next-press/Reflection.git",
-                "reference": "793bfd92d9a0fc96ae9608fb3e947c3f59fb3a0d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/next-press/Reflection/zipball/793bfd92d9a0fc96ae9608fb3e947c3f59fb3a0d",
-                "reference": "793bfd92d9a0fc96ae9608fb3e947c3f59fb3a0d",
-                "shasum": ""
-            },
-            "require": {
-                "nikic/php-parser": "^1.0",
-                "php": ">=5.3.3",
-                "phpdocumentor/reflection-docblock": "~2.0",
-                "psr/log": "~1.0"
-            },
-            "require-dev": {
-                "behat/behat": "~2.4",
-                "mockery/mockery": "~0.8",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "phpDocumentor": [
-                        "src/",
-                        "tests/unit/",
-                        "tests/mocks/"
-                    ]
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Reflection library to do Static Analysis for PHP Projects",
-            "homepage": "http://www.phpdoc.org",
-            "keywords": [
-                "phpDocumentor",
-                "phpdoc",
-                "reflection",
-                "static analysis"
-            ],
-            "support": {
-                "source": "https://github.com/next-press/Reflection/tree/3.0.1"
-            },
-            "time": "2016-05-21T08:42:32+00:00"
+            "time": "2022-01-10T05:05:26+00:00"
         },
         {
             "name": "next-press/wordpress-hook-parser",
@@ -416,12 +360,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/next-press/wordpress-hook-parser.git",
-                "reference": "d02fd0d4d7b452f16c158ae02794cc25c91bc703"
+                "reference": "9d905c9edab95a08ce4b150d9fd0dc3a1382bb0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/next-press/wordpress-hook-parser/zipball/d02fd0d4d7b452f16c158ae02794cc25c91bc703",
-                "reference": "d02fd0d4d7b452f16c158ae02794cc25c91bc703",
+                "url": "https://api.github.com/repos/next-press/wordpress-hook-parser/zipball/9d905c9edab95a08ce4b150d9fd0dc3a1382bb0e",
+                "reference": "9d905c9edab95a08ce4b150d9fd0dc3a1382bb0e",
                 "shasum": ""
             },
             "type": "library",
@@ -440,7 +384,7 @@
             "support": {
                 "source": "https://github.com/next-press/wordpress-hook-parser/tree/master"
             },
-            "time": "2022-01-08T02:35:33+00:00"
+            "time": "2022-01-10T05:03:53+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -488,16 +432,70 @@
             "time": "2015-09-19T14:15:08+00:00"
         },
         {
+            "name": "phpdocumentor/reflection",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/Reflection.git",
+                "reference": "793bfd92d9a0fc96ae9608fb3e947c3f59fb3a0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/Reflection/zipball/793bfd92d9a0fc96ae9608fb3e947c3f59fb3a0d",
+                "reference": "793bfd92d9a0fc96ae9608fb3e947c3f59fb3a0d",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/php-parser": "^1.0",
+                "php": ">=5.3.3",
+                "phpdocumentor/reflection-docblock": "~2.0",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "behat/behat": "~2.4",
+                "mockery/mockery": "~0.8",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "phpDocumentor": [
+                        "src/",
+                        "tests/unit/",
+                        "tests/mocks/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Reflection library to do Static Analysis for PHP Projects",
+            "homepage": "http://www.phpdoc.org",
+            "keywords": [
+                "phpDocumentor",
+                "phpdoc",
+                "reflection",
+                "static analysis"
+            ],
+            "time": "2016-05-21T08:42:32+00:00"
+        },
+        {
             "name": "phpdocumentor/reflection-docblock",
             "version": "2.0.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/next-press/ReflectionDocBlock.git",
+                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
                 "reference": "e6a969a640b00d8daa3c66518b0405fb41ae0c4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/next-press/ReflectionDocBlock/zipball/e6a969a640b00d8daa3c66518b0405fb41ae0c4b",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/e6a969a640b00d8daa3c66518b0405fb41ae0c4b",
                 "reference": "e6a969a640b00d8daa3c66518b0405fb41ae0c4b",
                 "shasum": ""
             },
@@ -1024,7 +1022,9 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7.2"
+    },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
 }
