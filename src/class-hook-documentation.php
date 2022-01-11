@@ -175,6 +175,15 @@ class Hook_Documentation extends \Bologer\HookDocumentation {
 	 */
 	protected function generateSingleHook($hook) {
 
+		/**
+		 * Skip ignored hooks.
+		 */
+		if ($this->get_tag($hook, 'ignore', 'content', null) !== null) {
+
+			return;
+
+		} // end if;
+
 		$header = '---' . PHP_EOL;
 
 		$content = $this->_markdownContent;

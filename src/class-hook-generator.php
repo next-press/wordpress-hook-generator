@@ -25,7 +25,7 @@ class Hook_Generator {
 	 *
 	 * @var string
 	 */
-	public static $version = '0.0.6';
+	public static $version = '0.0.7';
 
 	/**
 	 * Generates the output file.
@@ -72,6 +72,11 @@ class Hook_Generator {
 		->boolean()
 		->describedAs('Internal! Sync the version number between the package.json and the php file.');
 
+		$cmd->option('u')
+		->aka('update')
+		->boolean()
+		->describedAs('Update this generator.');
+
 		$c = new Color();
 
 		/*
@@ -85,6 +90,17 @@ class Hook_Generator {
 		if ($cmd['help']) {
 
 			$cmd->printHelp();
+
+			exit;
+
+		} // end if;
+
+    /*
+     * Deal with the updates.
+     */
+		if ($cmd['update']) {
+
+			self::_update();
 
 			exit;
 
@@ -242,5 +258,41 @@ class Hook_Generator {
 		echo '→ Done!' . PHP_EOL;
 
 	} // end _sync_version;
+
+	/**
+	 * Update the tool version via Git.
+	 *
+	 * @internal
+	 * @since 0.0.7
+	 *
+	 * @return void
+	 */
+	public static function _update() {
+
+		$pwd = dirname(__FILE__, 2); // phpcs:ignore
+
+		echo sprintf('→ Updating tool...') . PHP_EOL;
+
+		$commands = sprintf('
+			cd "%s"
+			git remote update
+			git status -uno | grep -q -v "Your branch is up to date with \'origin/main\'" || composer install --quiet 
+		', $pwd);
+
+		$output = shell_exec($commands);
+
+		$output = explode(PHP_EOL, $output);
+
+		$output = array_filter($output);
+
+		echo '→ ' . implode(PHP_EOL . '→ ', $output) . PHP_EOL;
+
+		$json = json_decode(file_get_contents($pwd . '/package.json'), true);
+
+		echo sprintf('→ Installed version: %s', $json['version']) . PHP_EOL;
+
+		echo '→ Done!' . PHP_EOL;
+
+	} // end _update;
 
 } // end class Hook_Generator;

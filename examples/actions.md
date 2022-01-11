@@ -1,20 +1,3 @@
-### meh-hook
-
-Filter a aCustomize setting value in un-slashed form.
-
-Added in 3.5.0
-
-```php
-apply_filters("meh-hook", mixed $value, \WP_Customize_Setting $this)
-```
-
-Location: relationships.php:52
-
-#### Arguments
-* `$value` (_mixed_) Value of the setting.
-* `$this` (_\WP_Customize_Setting_) WP_Customize_Setting instance.
-
----
 ### good_static_filter
 
 This is a well documented filter.
@@ -453,4 +436,20 @@ do_action("deprecated_action")
 ```
 
 Location: deprecated-file.php:28
+
+---
+### main_scope_do_not_ignore
+
+This hook should not be ignored.
+
+Added in 5.4.0
+
+```php
+do_action("main_scope_do_not_ignore")
+```
+
+Location: ignored.php:13
+
+#### Arguments
+*None.*
 

@@ -42,9 +42,10 @@ class wpdb {
 
 	public static function relate_method2() {
 		/**
-		 * Filter a aCustomize setting value in un-slashed form.
+		 * Filter a Customize setting value in un-slashed form.
 		 *
 		 * @since 3.5.0
+		 * @ignore
 		 *
 		 * @param mixed                $value Value of the setting.
 		 * @param WP_Customize_Setting $this WP_Customize_Setting instance.

@@ -1,6 +1,6 @@
 {
   "name": "wordpress-hook-parser",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Parses the hooks and filters on our plugin and generate a markdown file with the contents.",
   "main": "index.js",
   "directories": {

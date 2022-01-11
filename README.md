@@ -72,6 +72,14 @@ wordpress-hook-generator path/to/folder -i dependencies,release
 
 By default, PHP warnings thrown while generating the documentation are suppressed and not shown on the terminal window. Adding the `-d` flag will display the warning messages.
 
+## Updating the Tool
+
+You can update the tool by running the command below:
+
+```
+wordpress-hook-generator --update
+```
+
 ## Development
 
 To develop, test, or debug this tool, clone this repository and then be sure to first install both the PHP and node.js dependencies.
@@ -121,10 +129,15 @@ There is no need to manually update the @version tags on the code, as a `pre-com
 
 ## Changelog
 
+Version 0.0.7 - Released on 2021-01-11
+
+* Fixed: The @ignore tag is now respected;
+* Added: Auto-update via the --update flag.
+
 Version 0.0.6 - Released on 2021-01-10
 
-* Fix: Works for filters and actions inside class methods;
-* Fix: Final adjustments to the template;
+* Fixed: Works for filters and actions inside class methods;
+* Fixed: Final adjustments to the template;
 
 Version 0.0.5 - Released on 2021-01-09
 
